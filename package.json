@@ -1,0 +1,19 @@
+{
+  "name": "achernar",
+  "version": "1.0.0",
+  "description": "Achernar is a project about serverless using cloud run",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bujosa/Achernar.git"
+  },
+  "author": "Bujosa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bujosa/Achernar/issues"
+  },
+  "homepage": "https://github.com/bujosa/Achernar#readme"
+}
