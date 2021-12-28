@@ -9,3 +9,9 @@ COPY package*.json ./
 
 RUN npm install --only=production
 
+COPY . .
+
+RUN npm run build
+
+# Run the application
+CMD npm start
