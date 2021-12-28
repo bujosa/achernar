@@ -1,17 +1,10 @@
-FROM node:14
-
+FROM node:10-alpine3.10
 WORKDIR /usr/src/app
-
-ENV PORT 8080
-ENV HOST 0.0.0.0:8080
-
-COPY package*.json ./
-
+COPY package.json package*.json ./
 RUN npm install --only=production
-
 COPY . .
+CMD  ["npm", "start"]
 
-RUN npm run build
 
-# Run the application
-CMD npm start
+
+
