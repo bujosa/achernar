@@ -1,5 +1,5 @@
 const { PubSub } = require("@google-cloud/pubsub");
-const pubsub = new PubSub({});
+const pubsub = new PubSub();
 
 // Publish message to PubSub
 const publishPubSubMessage = async function (topicName, data) {

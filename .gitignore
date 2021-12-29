@@ -103,5 +103,8 @@ dist
 # TernJS port file
 .tern-port
 
-# pub sub config
-credentials.json
+# pubsub config
+pubsub-credentials.json
+
+# storages config
+storages-credentials.json
