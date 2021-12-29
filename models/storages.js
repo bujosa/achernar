@@ -4,7 +4,7 @@ const uuid = require("uuid");
 class Storages {
   constructor() {
     this.storage = new Storage({
-      keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS,
+      keyFilename: process.env.GOOGLE_APPLICATION_STORAGES_CREDENTIALS,
       projectId: process.env.GOOGLE_CLOUD_PROJECT,
     });
 
