@@ -20,6 +20,12 @@ const uploadImage = async (req, res = response) => {
     // Save profile picture in user collection
     await user.save();
 
+    // Publish message to PubSub
+    await publishPubSubMessage("updated-user", {
+      where: { id: user._id },
+      data: { profilePicture: user.profilePicture },
+    });
+
     res.status(200).send("OK");
   } catch (e) {
     console.log(e);
