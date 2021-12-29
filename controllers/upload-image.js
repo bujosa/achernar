@@ -1,11 +1,24 @@
 const { response } = require("express");
 const Storages = require("../models/storages");
+const User = require("../models/user");
 
 const uploadImage = async (req, res = response) => {
   const { file, filename, email } = decodeBase64Json(req.body.message.data);
   try {
+    // Activate storage
     const storages = new Storages();
+
+    // Upload profile picture on storage
     const imageUrl = await storages.upload(file, filename);
+
+    // Find user by email
+    const user = await User.findOne({ email });
+
+    // Update user profile picture
+    user.profilePicture = imageUrl;
+
+    // Save profile picture in user collection
+    await user.save();
 
     res.status(200).send("OK");
   } catch (e) {
