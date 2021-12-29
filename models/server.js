@@ -14,8 +14,8 @@ class Server {
   }
 
   middlewares() {
-    this.app.use(express.urlencoded({ extended: true }));
-    this.app.use(express.json());
+    this.app.use(express.urlencoded({ extended: true, limit: "50mb" }));
+    this.app.use(express.json({ limit: "50mb" }));
 
     // End Points
     this.app.use("/", require("../router/upload-image"));
