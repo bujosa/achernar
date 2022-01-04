@@ -1,6 +1,7 @@
 const { response } = require("express");
 const Storages = require("../models/storages");
 const User = require("../models/user");
+const { publishPubSubMessage } = require("../models/pubsub");
 
 const uploadImage = async (req, res = response) => {
   const { file, filename, email } = decodeBase64Json(req.body.message.data);
