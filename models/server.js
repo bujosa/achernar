@@ -23,6 +23,7 @@ class Server {
 
   execute() {
     this.middlewares();
+
     this.server.listen(this.port, () => {
       console.log(`Listening on port ${this.port}`);
     });
